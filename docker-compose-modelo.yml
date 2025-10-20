@@ -1,0 +1,17 @@
+# ajustar as configuracoes de conexao com o banco de dados
+
+services:  
+  postgres:    
+    image: postgres:18
+    container_name: postgres_ecommerce
+    environment:      
+      POSTGRES_DB: meubanco      
+      POSTGRES_PASSWORD: minhasenha      
+      POSTGRES_USER: meuusuario
+    ports:      
+      - 2020:2020 #porta personalizada default é 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data 
+    command: ["postgres", "-p", "2020"] #ao subir o container docker altera o pgconf abrindo a porta personalizada, assim nao é necessário acessar o container manualmente e alterar
+volumes:
+  pgdata:
