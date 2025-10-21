@@ -11,28 +11,28 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="tb_user")
+@Table(name = "tb_user")
 public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="user_id")
+    @Column(name = "user_id")
     private Long id;
-    
-    @Column(name="user_name")
+
+    @Column(name = "user_name")
     private String fullname;
-    
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="billing_address_fk")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "billing_address_fk")
     private BillingAddressEntity billingAddressEntity;
 
     public UserEntity() {
     }
 
-    public UserEntity(Long id, String fullname, BillingAddressEntity billingAddress) {
+    public UserEntity(Long id, String fullname, BillingAddressEntity billingAddressEntity) {
         this.id = id;
         this.fullname = fullname;
-        this.billingAddressEntity = billingAddress;
+        this.billingAddressEntity = billingAddressEntity;
     }
 
     public Long getId() {
@@ -51,11 +51,11 @@ public class UserEntity {
         this.fullname = fullname;
     }
 
-    public BillingAddressEntity getBillingAddress() {
+    public BillingAddressEntity getBillingAddressEntity() {
         return billingAddressEntity;
     }
 
-    public void setBillingAddress(BillingAddressEntity billingAddress) {
-        this.billingAddressEntity = billingAddress;
+    public void setBillingAddressEntity(BillingAddressEntity billingAddressEntity) {
+        this.billingAddressEntity = billingAddressEntity;
     }
 }

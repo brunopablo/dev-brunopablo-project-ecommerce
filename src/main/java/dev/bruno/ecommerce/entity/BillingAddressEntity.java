@@ -22,7 +22,7 @@ public class BillingAddressEntity {
 
     private String complement;
 
-    @OneToOne(mappedBy = "billingAddressEntity", cascade=CascadeType.ALL)
+    @OneToOne(mappedBy = "billingAddressEntity", cascade = CascadeType.ALL)
     private UserEntity userEntity;
 
     public BillingAddressEntity() {
