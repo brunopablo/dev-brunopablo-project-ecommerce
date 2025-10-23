@@ -4,7 +4,7 @@ import java.util.List;
 
 public record CreateOrderRequest(
     Long userId,
-            List<OrderItemDto> itens
+    List<OrderProductDto> products
 ) {
 
 }

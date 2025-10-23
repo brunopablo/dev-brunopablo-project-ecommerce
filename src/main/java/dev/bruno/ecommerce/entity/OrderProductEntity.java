@@ -13,10 +13,10 @@ public class OrderProductEntity {
 
     @EmbeddedId
     @Column(name="order_item_id")
-    private OrderItemId id;
+    private OrderProductId id;
 
     @Column(name="total_value")
-    private BigDecimal totalValue;
+    private BigDecimal priceValue;
     
     @Column(name="quantity")
     private Integer quantity;
@@ -24,26 +24,26 @@ public class OrderProductEntity {
     public OrderProductEntity() {
     }
 
-    public OrderProductEntity(OrderItemId id, BigDecimal totalValue, Integer quantity) {
+    public OrderProductEntity(OrderProductId id, BigDecimal priceValue, Integer quantity) {
         this.id = id;
-        this.totalValue = totalValue;
+        this.priceValue = priceValue;
         this.quantity = quantity;
     }
 
-    public OrderItemId getId() {
+    public OrderProductId getId() {
         return id;
     }
 
-    public void setId(OrderItemId id) {
+    public void setId(OrderProductId id) {
         this.id = id;
     }
 
-    public BigDecimal getTotalValue() {
-        return totalValue;
+    public BigDecimal getPriceValue() {
+        return priceValue;
     }
 
-    public void setTotalValue(BigDecimal totalValue) {
-        this.totalValue = totalValue;
+    public void setPriceValue(BigDecimal priceValue) {
+        this.priceValue = priceValue;
     }
 
     public Integer getQuantity() {

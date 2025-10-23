@@ -4,9 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import dev.bruno.ecommerce.entity.OrderProductEntity;
-import dev.bruno.ecommerce.entity.OrderItemId;
+import dev.bruno.ecommerce.entity.OrderProductId;
 
 @Repository
-public interface OrderProductRepository extends JpaRepository<OrderProductEntity, OrderItemId>{
+public interface OrderProductRepository extends JpaRepository<OrderProductEntity, OrderProductId>{
 
 }

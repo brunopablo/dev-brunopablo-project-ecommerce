@@ -38,18 +38,17 @@ public class OrderEntity {
     private UserEntity user;
 
     @OneToMany(mappedBy = "id.order", cascade = CascadeType.ALL)
-    private List<OrderProductEntity> orders;
+    private List<OrderProductEntity> ordersProducts;
 
     public OrderEntity() {
     }
 
-    public OrderEntity(Long id, BigDecimal totalValue, LocalDateTime createdAt, UserEntity user,
-            List<OrderProductEntity> orders) {
+    public OrderEntity(Long id, BigDecimal totalValue, LocalDateTime createdAt, UserEntity user, List<OrderProductEntity> orders) {
         this.id = id;
         this.totalValue = totalValue;
         this.createdAt = createdAt;
         this.user = user;
-        this.orders = orders;
+        this.ordersProducts = orders;
     }
 
     public Long getId() {
@@ -84,11 +83,11 @@ public class OrderEntity {
         this.user = user;
     }
 
-    public List<OrderProductEntity> getOrders() {
-        return orders;
+    public List<OrderProductEntity> getOrdersProducts() {
+        return ordersProducts;
     }
 
-    public void setOrders(List<OrderProductEntity> orders) {
-        this.orders = orders;
+    public void setOrdersProducts(List<OrderProductEntity> orders) {
+        this.ordersProducts = orders;
     }
 }
